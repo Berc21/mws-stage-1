@@ -8,8 +8,8 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 5500; // Change this to your server port
-    const domain = 'localhost';
+    const port = 443; // Change this to your server port
+    const domain = 'stage1.netlify';
     return `http://${domain}:${port}/data/restaurants.json`;
   }
 
