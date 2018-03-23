@@ -4,26 +4,6 @@ let restaurants,
 var map
 var markers = []
 
-
-// service worker
-
-if ('serviceWorker' in navigator) {
-
-  window.addEventListener('load', function() {
-    navigator.serviceWorker
-        .register('/sw.js', {scope: './'})
-        .then(function(registration) {
-      // If registration is successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }).catch(function(err) {
-      //If registration is failed :(
-      console.log('ServiceWorker registration failed:', err);
-    });
-  });
-} 
-
-
-
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -98,14 +78,10 @@ window.initMap = () => {
   self.map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
     center: loc,
-    scrollwheel: false,
+    scrollwheel: false
   });
-
   updateRestaurants();
 }
-
-
-
 
 /**
  * Update page and map for current restaurants.
@@ -129,7 +105,6 @@ updateRestaurants = () => {
     }
   })
 }
-
 
 /**
  * Clear current restaurants, their HTML and remove their map markers.
@@ -166,7 +141,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = restaurant.name + ' card photo';
+  image.alt =  restaurant.name + ' card image';
   li.append(image);
 
   const name = document.createElement('h1');

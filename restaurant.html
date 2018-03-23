@@ -4,7 +4,9 @@
 <head>
   <!-- Normalize.css for better cross-browser consistency -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#02ccba">
   <link rel="manifest" href="./manifest.json">
+
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" media="none" onload="if(media!='all')media='all'" />
   <!-- Main CSS file -->
   <link rel="stylesheet" href="css/styles.css">
@@ -39,7 +41,7 @@
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
       <h1 id="restaurant-name"></h1>
-      <img id="restaurant-img">
+      <picture id="restaurant-img"></picture>
       <p id="restaurant-cuisine"></p>
       <p id="restaurant-address"></p>
       <table id="restaurant-hours"></table>
@@ -64,8 +66,11 @@
   <script type="text/javascript" src="js/dbhelper.js"></script>
   <!-- Main javascript file -->
   <script type="text/javascript" src="js/restaurant_info.js"></script>
+
+  <script type="application/javascript" charset="utf-8" src="js/sw.js"></script>
   <!-- Google Maps -->
-  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAG8TyTtzBBfTvLhfmDZ6EqQHzJQOlMMd0&libraries=places&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOFR4EChDaE3A1YLP7UK48bh7Buddgr9Y&callback=initMap"
+  type="text/javascript"></script>
   <!-- End scripts -->
 
 </body>

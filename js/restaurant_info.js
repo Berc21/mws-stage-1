@@ -49,16 +49,27 @@ fetchRestaurantFromURL = (callback) => {
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
+  
+  
+  
+  
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
 
+
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
-  image.src = DBHelper.bigImageUrlForRestaurant(restaurant);
-  image.alt =  restaurant.name + ' cover image';
+
+  const pictureMarkup = `
+  <source  media="(max-width: 465px)" srcset="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.alt} cover picture" >
+  <img class="restaurant-img" src="${DBHelper.bigImageUrlForRestaurant(restaurant)}" alt="${restaurant.alt} cover picture">
+`
+  
+  image.insertAdjacentHTML('beforeend', pictureMarkup);
+  
+  
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
 
