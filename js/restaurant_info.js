@@ -81,6 +81,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   fillReviewsHTML();
 }
 
+
+
+
 /**
  * Create restaurant operating hours HTML table and add it to the webpage.
  */

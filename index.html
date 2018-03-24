@@ -7,21 +7,29 @@
     <link rel="manifest" href="./manifest.json">
   <title>Restaurant Reviews</title>
 
-  <link rel="stylesheet" href="css/styles.css" >
-  <link rel="stylesheet" href="css/mobile.css" media="(max-width: 600px)">
-  <link rel="stylesheet" href="css/restaurant-listing.css" >
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css"   />
+  <style>
 
+
+@charset "utf-8";body,li,ul{color:#333;font-family:Arial,Helvetica,sans-serif}body,h1,h2,h3,h4,h5,h6,li,ul{font-family:Arial,Helvetica,sans-serif}#breadcrumb li a,a,a:focus,a:hover{text-decoration:none}#map,nav{width:100%}#footer,nav h1 a{text-transform:uppercase}#footer,nav{text-align:center}*{padding:0;margin:0}*,::after,::before{box-sizing:inherit}html{height:100%;box-sizing:border-box;font-size:62.5%}body{line-height:1.5;background-color:#F3F3F3;position:relative}:focus{outline:#F44336 dotted .2rem}li,ul{font-size:1.6rem}a{color:orange}a:focus,a:hover{color:#3397db}a img{border:0 #fff}h1,h2,h3,h4,h5,h6{margin:0 0 2rem}article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}#maincontent{background-color:#f3f3f3;min-height:100%}nav{height:8rem;background-color:#252831;display:flex}nav h1{margin:auto}nav h1 a{color:#fff;font-size:2.5rem;font-weight:300;letter-spacing:1rem}#breadcrumb{padding:1rem 4rem 1.6rem;list-style:none;background-color:#eee;font-size:1.7rem;margin:0;width:calc(50% - 8rem)}#breadcrumb li{display:inline}#breadcrumb li+li:before{padding:.8rem;color:#000;content:"/\00a0"}#breadcrumb li a{color:#01579B}#breadcrumb li a:hover{color:#009688;text-decoration:underline}#map{height:40rem;background-color:#ccc}#footer{background-color:#444;color:#fff;font-size:1.4rem;letter-spacing:1px;padding:2.5rem}a.skip-main{left:-999px;position:absolute;top:auto;width:1px;height:1px;overflow:hidden;z-index:-999}a.skip-main:active,a.skip-main:focus{color:#fff;background-color:#000;left:auto;top:auto;width:30%;height:auto;overflow:auto;margin:10px 35%;padding:5px;border-radius:15px;border:4px solid #ff0;text-align:center;font-size:1.2em;z-index:999}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+ 
+  </style>
 </head>
+          
+<a class="skip-main" href="#maincontent">Skip to main content</a>
 
 <body>
   <header>
     <nav>
-      <h1><a href="/" aria-label="Restaurant reviews home page" >Restaurant Reviews</a></h1>
+      <h1><a href="/" aria-label="Home page link" >Restaurant Reviews</a></h1>
     </nav>
   </header>
 
-  <main id="maincontent">
+  <main id="maincontent"  tabindex="-1" >
     <section id="map-container">
       <div id="map" role="presentation" aria-hidden="true" ></div>
     </section>
@@ -38,7 +46,8 @@
         </select>
       </div>
       <section id="restaurants-list-container">
-        <ul  id="restaurants-list"></ul>
+        <ul id="restaurants-list">
+        </ul>
     </section>
     </section>
   </main>
@@ -53,15 +62,43 @@
 
 
 
+  <style>
+
+    @media only screen and (max-width:60rem){nav h1 a{font-size:2rem}#breadcrumb{width:auto}.filter-options{flex-direction:column;padding-top:1rem}.inside #map-container{background:#00f;position:static;width:100%;height:60vh;margin-top:12.5rem}.inside #footer{width:auto}#restaurant-container,#reviews-container{max-width:100%;padding:4rem 2rem}#reviews-list li{width:30rem;max-width:100%}}
+
+  .filter-options{width:100%;background-color:#3397DB;display:flex;justify-content:center;align-items:center}#restaurants-list li,.filter-options select{background-color:#fff;font-family:Arial,sans-serif}.filter-options h2{color:#000;font-size:2rem;font-weight:700;line-height:1;margin:0 2rem}.filter-options select{border:1px solid #fff;font-size:1.6rem;height:3.5rem;letter-spacing:0;margin:1rem;padding:0 1rem;width:20rem}.restaurants-list-container{max-width:114rem}#restaurants-list{background-color:#f3f3f3;list-style:none;margin:0 auto;padding:3rem 1.5rem 6rem;text-align:center;display:flex;flex-wrap:wrap;justify-content:space-around}#restaurants-list li{border:.2rem solid #ccc;margin:1.5rem;max-width:100%;width:32rem;min-height:38rem;padding:0 3rem 2.5rem;text-align:left}#restaurants-list .restaurant-img{background-color:#ccc;display:block;margin:0 0 0 -3rem;width:calc(100% + 6rem);height:auto}#restaurants-list li h1{color:#f44336;font-family:Arial,sans-serif;font-size:2rem;font-weight:700;letter-spacing:0;line-height:1.3;margin:2rem 0 1rem;text-transform:uppercase}#restaurants-list p{margin:0;font-size:1.6rem}#restaurants-list li a{background-color:orange;border-bottom:.3rem solid #eee;color:#424242;display:inline-block;font-size:1.6rem;font-weight:700;margin:1.5rem 0 0;padding:.8rem 3rem 1rem;text-align:center;text-decoration:none;text-transform:uppercase}
+ 
+  .fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+ 
+ </style>
+
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
 
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
-  <script type="application/javascript" charset="utf-8" src="js/sw.js"></script>
+
+
+<!-- Lozad.js from CDN -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+
+<script type="application/javascript" charset="utf-8" src="js/sw.js"></script>
 
 
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOFR4EChDaE3A1YLP7UK48bh7Buddgr9Y&callback=initMap"
-  type="text/javascript"></script>
+  type="application/javascript"></script>
 
 </body>
 

@@ -125,3 +125,18 @@ nav h1 a {
   text-align: center;
   text-transform: uppercase;
 }
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

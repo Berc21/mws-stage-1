@@ -132,17 +132,49 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   addMarkersToMap();
 }
 
+
+
+
+
+
+window.addEventListener("load", function(event) {
+
+  var map = document.querySelector('#map iframe');
+
+  
+  map.classList.add("lozad");
+
+  lozad('.lozad', {
+    load: function(el) {
+        el.src = el.dataset.src;
+        el.onload = function() {
+            el.classList.add('fade')
+        }
+    }
+  }).observe();
+});
+
+
+
 /**
  * Create restaurant HTML.
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
-
+/**
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.alt =  restaurant.name + ' card image';
   li.append(image);
+*/
+
+  const pictureMarkup = `
+
+  <img class="restaurant-img lozad" data-src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name} cover picture">
+`
+li.insertAdjacentHTML('beforeend', pictureMarkup);
+
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
@@ -162,7 +194,13 @@ createRestaurantHTML = (restaurant) => {
   li.append(more)
 
   return li
+
+
 }
+
+
+
+
 
 /**
  * Add markers for current restaurants to the map.
