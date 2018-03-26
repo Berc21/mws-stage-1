@@ -133,29 +133,6 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 }
 
 
-
-
-
-
-window.addEventListener("load", function(event) {
-
-  var map = document.querySelector('#map iframe');
-
-  
-  map.classList.add("lozad");
-
-  lozad('.lozad', {
-    load: function(el) {
-        el.src = el.dataset.src;
-        el.onload = function() {
-            el.classList.add('fade')
-        }
-    }
-  }).observe();
-});
-
-
-
 /**
  * Create restaurant HTML.
  */
@@ -171,7 +148,7 @@ createRestaurantHTML = (restaurant) => {
 
   const pictureMarkup = `
 
-  <img class="restaurant-img lozad" data-src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name} cover picture">
+  <img class="restaurant-img" src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name} cover picture">
 `
 li.insertAdjacentHTML('beforeend', pictureMarkup);
 
