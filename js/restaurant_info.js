@@ -64,7 +64,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const pictureMarkup = `
   <source  media="(max-width: 465px)" srcset="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name} cover picture" >
-  <img class="restaurant-img" src="${DBHelper.bigImageUrlForRestaurant(restaurant)}" alt="${restaurant.name} cover picture">
+  <img  src="${DBHelper.bigImageUrlForRestaurant(restaurant)}" alt="${restaurant.name} cover picture">
 `
   
   image.insertAdjacentHTML('beforeend', pictureMarkup);

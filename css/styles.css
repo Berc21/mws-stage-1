@@ -140,3 +140,32 @@ nav h1 a {
     opacity: 1;
   }
 }
+
+
+.skip-list{
+  left:-999px;
+  position:absolute;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow: hidden;
+  z-index:-999
+}
+.skip-list:active, .skip-list:focus {
+  color: black;
+  font-weight: bold;
+  display: inline-block;
+  background-color: #fff;
+  left:auto;
+  top:200px;
+  max-width:100%;
+  width: auto;
+  height:auto;
+  overflow:auto;
+  margin:10px 40%;
+  padding:15px;
+  border:4px solid #F44336;
+  text-align:center;
+  font-size:1.2em;
+  z-index:999
+}
