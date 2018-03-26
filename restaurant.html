@@ -18,10 +18,10 @@
   <header>
     <!-- Beginning nav -->
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a href="/" id="home-page-link" aria-label="Home page link" >Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
+    <ul id="breadcrumb" aria-label="Breadcrumb" >
       <li><a href="/">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
@@ -32,13 +32,13 @@
   <!-- Beginning main -->
   <main id="maincontent">
     <!-- Beginning map -->
-    <section id="map-container">
-      <div id="map" role="presentation" aria-hidden="true" ></div>
+    <section id="map-container" role="application" >
+      <div id="map" ></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
+      <h2 id="restaurant-name"></h2>
       <picture id="restaurant-img" class="fade"></picture>
       <p id="restaurant-cuisine"></p>
       <p id="restaurant-address"></p>
@@ -62,35 +62,15 @@
   </footer>
   <!-- End footer -->
 
-  <style>
-
-   
-   #restaurant-cuisine,#restaurant-name{text-transform:uppercase;font-weight:300}.inside header{position:fixed;top:0;width:100%;z-index:1000}.inside #map-container{background:#00f;height:87%;position:fixed;right:0;top:8rem;width:50%;z-index:2}.inside #map{background-color:#ccc;height:100%;width:100%}.inside #footer{width:50%}#restaurant-name{color:#f44336;font-family:Arial,sans-serif;font-size:2.5rem;letter-spacing:0;margin:1.5rem 0 3rem;line-height:1.1}#restaurant-img img{width:90%}#restaurant-address{font-size:1.6rem;margin:10px 0}#restaurant-cuisine{background-color:#333;color:#ddd;font-size:1.6rem;letter-spacing:1rem;margin:0 0 2rem;padding:2px 0;text-align:center;width:90%}#restaurant-container,#reviews-container{border-bottom:1px solid #d9d9d9;border-top:1px solid #fff;padding:14rem 4rem 3rem;max-width:50%}#reviews-container{padding:3rem 4rem 8rem}#reviews-container h2{color:#f44336;font-size:2.4rem;font-weight:300;letter-spacing:-1px;padding-bottom:2rem}#reviews-list{margin:0;padding:0}#reviews-list li{background-color:#fff;border:2px solid #f3f3f3;display:block;list-style-type:none;margin:0 0 3rem;overflow:hidden;padding:2rem;position:relative;width:85%}#reviews-list li p{margin:0 0 1rem}#restaurant-hours td{color:#666;font-size:1.6rem}
-    @media only screen and (max-width:60rem){nav h1 a{font-size:2rem}#breadcrumb{width:auto}.filter-options{flex-direction:column;padding-top:1rem}.inside #map-container{background:#00f;position:static;width:100%;height:60vh;margin-top:12.5rem}.inside #footer{width:auto}#restaurant-container,#reviews-container{max-width:100%;padding:4rem 2rem}#reviews-list li{width:30rem;max-width:100%}}
-  
-.fade {
-  animation-name: fade;
-  animation-duration: 2s;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-  
-  </style>
-
+<link rel="stylesheet" href="css/restaurant-details.css">
+<link rel="stylesheet" href="css/mobile.css">
   <!-- Beginning scripts -->
   <!-- Database helpers -->
-  <script type="text/javascript" src="js/dbhelper.js"></script>
+  <script defer type="text/javascript" src="js/dbhelper.js"></script>
   <!-- Main javascript file -->
-  <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <script defer type="text/javascript" src="js/restaurant_info.js"></script>
 
-  <script type="application/javascript" charset="utf-8" src="js/sw.js"></script>
+  <script defer type="application/javascript" charset="utf-8" src="js/sw.js"></script>
   <!-- Google Maps -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOFR4EChDaE3A1YLP7UK48bh7Buddgr9Y&callback=initMap"
   type="text/javascript"></script>

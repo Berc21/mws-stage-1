@@ -4,6 +4,19 @@ let restaurants,
 var map
 var markers = []
 
+
+
+
+/**
+ * Init function that fixs maps
+ */
+
+window.onload = function() {
+  DBHelper.removeTabbing();
+  DBHelper.addAriaTable();
+}; 
+
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -11,6 +24,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
 });
+
 
 /**
  * Fetch all neighborhoods and set their HTML.
@@ -148,12 +162,12 @@ createRestaurantHTML = (restaurant) => {
 
   const pictureMarkup = `
 
-  <img class="restaurant-img" src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name} cover picture">
+  <img class="restaurant-img" src="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name +' Restaurant, ' + restaurant.atmosphere}">
 `
 li.insertAdjacentHTML('beforeend', pictureMarkup);
 
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 

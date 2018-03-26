@@ -170,4 +170,17 @@ class DBHelper {
     return marker;
   }
 
+  static removeTabbing() {
+    document.querySelectorAll('#map iframe').forEach((item) => {
+      item.setAttribute('tabindex', '-1');
+      // adds title attirbute
+      item.setAttribute('title', 'Google Maps iframe');
+    });
+  }
+  static addAriaTable() {
+
+  document.querySelectorAll('#map [tabindex="0"]').forEach((item) => {
+    item.setAttribute('aria-label', 'Marked restaurants');
+  });
+}
 }

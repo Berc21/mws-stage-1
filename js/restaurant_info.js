@@ -63,8 +63,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
 
   const pictureMarkup = `
-  <source  media="(max-width: 465px)" srcset="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name} cover picture" >
-  <img  src="${DBHelper.bigImageUrlForRestaurant(restaurant)}" alt="${restaurant.name} cover picture">
+  <source  media="(max-width: 465px)" srcset="${DBHelper.imageUrlForRestaurant(restaurant)}" alt="${restaurant.name +' Restaurant, ' + restaurant.atmosphere}"  >
+  <img  src="${DBHelper.bigImageUrlForRestaurant(restaurant)}" alt="${restaurant.name +' Restaurant, ' + restaurant.atmosphere}" >
 `
   
   image.insertAdjacentHTML('beforeend', pictureMarkup);
@@ -158,6 +158,7 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
+  li.setAttribute('aria-current', 'page');
   breadcrumb.appendChild(li);
 }
 
