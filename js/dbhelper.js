@@ -178,7 +178,6 @@ class DBHelper {
     });
   }
   static addAriaTable() {
-
   document.querySelectorAll('#map [tabindex="0"]').forEach((item) => {
     item.setAttribute('aria-label', 'Marked restaurants');
   });
