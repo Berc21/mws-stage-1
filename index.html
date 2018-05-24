@@ -30,11 +30,11 @@
       <div class="filter-options">
         <h2>Filter Results</h2>
         <label  class="filter-label" for="neighborhoods-select">
-        <select  aria-label="Select neighborhoods"  id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <select  aria-label="Select neighborhoods"  id="neighborhoods-select" name="neighborhoods">
           <option value="all">All Neighborhoods</option>
         </select></label>
         <label class="filter-label" for="cuisines-select">
-        <select  aria-label="Select Cuisines"   id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select  aria-label="Select Cuisines"   id="cuisines-select" name="cuisines">
           <option value="all">All Cuisines</option></label>
         </select>
       </div>
@@ -60,14 +60,11 @@
 
 
 
-<script defer type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
 
-<script defer type="application/javascript" charset="utf-8" src="js/main.js"></script>
-
-<script defer type="application/javascript" charset="utf-8" src="js/sw.js"></script>
+<script defer src="dist/homepage.js"></script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOFR4EChDaE3A1YLP7UK48bh7Buddgr9Y&callback=initMap"
-  type="application/javascript"></script>
+type="text/javascript"></script>
 
 </body>
 
